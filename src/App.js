@@ -54,7 +54,7 @@ const App = () => {
               <Route path="/reporting" element='Reporting' />
               <Route path="/parametre" element='Parametre' />
 
-              
+              {/* Utilistateur */}
             </Routes>
           </div>
 
