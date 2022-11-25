@@ -1,17 +1,18 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { FiSettings } from 'react-icons/fi'
 
+
+import { FiSettings } from 'react-icons/fi'
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 
 import { Navbar, Footer, Sidebar, ParametreTheme } from './components';
 import { Dashboard, Clientele, Encaissement, Parametre, Production, Reporting, Sinistre  } from './pages';
 
+import { useStateContext } from './contexts/ContextProvider'
 
 const App = () => {
-  const activeMenu = true;
-
+  const { activeMenu } = useStateContext();
 
   return (
     <div>

@@ -12,6 +12,7 @@ import {
 import { GiDamagedHouse } from "react-icons/gi";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
+import { useStateContext } from "../contexts/ContextProvider";
 
 const links = [
   {
@@ -45,11 +46,11 @@ const links = [
 ];
 
 const Sidebar = () => {
-  const activeMenu = true;
+  const { activeMenu, setActiveMenu } = useStateContext();
   
   const activeLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-black text-md m-2'
 
-  const normalLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-md text-gray-700 dar;text-gray-200 dark:hover:text-black hover:bg-light-gray m-2'
+  const normalLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2'
 
   const handleOpen = () => {};
 
@@ -60,13 +61,19 @@ const Sidebar = () => {
           <div className="flex justify-between items-center">
             <Link
               to="/"
-              onClick={() => {}}
+              onClick={() => setActiveMenu(false)}
               className="items-center ml-3 mt-4 flex text-xl font-extrabold dark:text-white text-slate-900"
             >
               <p>Uranus App</p>
             </Link>
             <Tooltip title="Fermer">
-              <button type="button" onClick={handleOpen} className="mt-4 mr-2">
+              <button
+                type="button"
+                onClick={() =>
+                  setActiveMenu((prevActiveMenu) => !prevActiveMenu)
+                }
+                className="mt-4 mr-2"
+              >
                 <IconButton>
                   <MdOutlineCancel />
                 </IconButton>
@@ -85,9 +92,7 @@ const Sidebar = () => {
                   onClick={() => {}}
                 >
                   {item.icon}
-                  <span className="capitalize">
-                    {item.name}
-                  </span>
+                  <span className="capitalize">{item.name}</span>
                 </NavLink>
               </div>
             ))}
