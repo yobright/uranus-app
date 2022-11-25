@@ -1,14 +1,16 @@
 import React, { useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { FiSettings } from 'react-icons/fi'
-
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 
+import { Navbar, Footer, Sidebar, ParametreTheme } from './components';
+import { Dashboard, Clientele, Encaissement, Parametre, Production, Reporting, Sinistre  } from './pages';
+
 
 const App = () => {
-  const activeMenu = false;
+  const activeMenu = true;
 
 
   return (
@@ -24,35 +26,34 @@ const App = () => {
           </div>
           {activeMenu ? (
             <div className='w-72 fixed sidebar dark:bg-secondary-dark-bg bg-red-400'>
-              Sidebar
+              <Sidebar />
             </div>
           ) : (
             <div className='w-0 dark:bg-secondary-dark-bg bg-blue-400 border'>
-              Sidebar w-0
+              <Sidebar />
             </div>
           )}
           <div className={
             `dark:bg-main-bg bg-main-bg min-h-screen w-full ${activeMenu ? 'md:ml-72' : 'flex-2'}`
           }>
             <div className='fixed md:static bg-main-bg dark:bg-main-bg navbar w-full'>
-              Navbar
+              <Navbar />
             </div>
           </div>
 
           <div>
             <Routes>
-
               {/* Dashboard */}
-              <Route path="/" element='Dashboard' />
-              <Route path="/dashboard" element='Dashboard' />
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/dashboard" element={<Dashboard />} />
 
               {/* Pages */}
-              <Route path="/production" element='Production' />
-              <Route path="/encaissement" element='Encaissement' />
-              <Route path="/clientele" element='Clientele' />
-              <Route path="/sinistre" element='Sinistre' />
-              <Route path="/reporting" element='Reporting' />
-              <Route path="/parametre" element='Parametre' />
+              <Route path="/production" element={<Production />} />
+              <Route path="/encaissement" element={<Encaissement />} />
+              <Route path="/clientele" element={<Clientele />} />
+              <Route path="/sinistre" element={<Sinistre />} />
+              <Route path="/reporting" element={<Reporting /> } />
+              <Route path="/parametre" element={<Parametre /> } />
 
               {/* Utilistateur */}
             </Routes>
