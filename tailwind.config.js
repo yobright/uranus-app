@@ -34,7 +34,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      sans: ["Ubuntu", ...defaultTheme.fontFamily.sans],
+      sans: ["Work Sans", ...defaultTheme.fontFamily.sans],
     }
   },
   plugins: [],
