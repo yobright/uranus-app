@@ -19,7 +19,7 @@ import { useStateContext } from "../contexts/ContextProvider";
 const links = [
   {
     name: "dashboard",
-    icon: <MdOutlineDashboard />,
+    icon: <MdOutlineDashboard className="text-4xl"/>,
   },
   {
     name: "production",
@@ -50,9 +50,9 @@ const links = [
 const Sidebar = () => {
   const { activeMenu, setActiveMenu } = useStateContext();
   
-  const activeLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-black text-md m-2'
+  const activeLink = "font- flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-xl m-2 bg-main-blue-button";
 
-  const normalLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2'
+  const normalLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-xl text-white dark:text-gray-200 hover:bg-main-blue-button m-2'
 
   const handleOpen = () => {};
 
@@ -64,7 +64,7 @@ const Sidebar = () => {
             <Link
               to="/"
               onClick={() => setActiveMenu(false)}
-              className="items-center ml-3 mt-4 flex text-xl font-extrabold dark:text-white text-slate-900"
+              className="items-center ml-3 mt-4 flex text-xl font-extrabold text-white"
             >
               <p>Uranus App</p>
             </Link>
