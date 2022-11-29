@@ -10,6 +10,8 @@ import {
   MdOutlineReport,
 } from "react-icons/md";
 import { GiDamagedHouse } from "react-icons/gi";
+import { FiSettings, FiGrid } from "react-icons/fi";
+
 
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
@@ -19,40 +21,40 @@ import { useStateContext } from "../contexts/ContextProvider";
 const links = [
   {
     name: "dashboard",
-    icon: <MdOutlineDashboard className="text-4xl"/>,
+    icon: <MdOutlineDashboard className="text-2xl" />,
   },
   {
     name: "production",
-    icon: <MdOutlineBuildCircle />,
+    icon: <MdOutlineBuildCircle className="text-2xl" />,
   },
   {
     name: "encaissement",
-    icon: <MdMoney />,
+    icon: <MdMoney className="text-2xl" />,
   },
   {
     name: "clientele",
-    icon: <MdOutlineSupervisedUserCircle />,
+    icon: <MdOutlineSupervisedUserCircle className="text-2xl" />,
   },
   {
     name: "sinistre",
-    icon: <GiDamagedHouse />,
+    icon: <GiDamagedHouse className="text-2xl" />,
   },
   {
     name: "reporting",
-    icon: <MdOutlineReport />,
+    icon: <MdOutlineReport className="text-2xl" />,
   },
   {
     name: "parametre",
-    icon: <MdOutlineSettings />,
+    icon: <FiSettings className="text-2xl" />,
   },
 ];
 
 const Sidebar = () => {
   const { activeMenu, setActiveMenu } = useStateContext();
   
-  const activeLink = "font- flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-xl m-2 bg-main-blue-button";
+  const activeLink = "font-semibold flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-active-button text-lg m-2 bg-main-blue-button";
 
-  const normalLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-xl text-white dark:text-gray-200 hover:bg-main-blue-button m-2'
+  const normalLink = 'font-meidum flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-lg text-white dark:text-gray-200 hover:bg-main-blue-button m-2'
 
   const handleOpen = () => {};
 
@@ -77,7 +79,7 @@ const Sidebar = () => {
                 className="mt-4 mr-2"
               >
                 <IconButton>
-                  <MdOutlineCancel />
+                  <FiGrid className="text-white text-2xl"/>
                 </IconButton>
               </button>
             </Tooltip>

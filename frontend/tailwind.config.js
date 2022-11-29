@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        'active-button': '#0047B4',
+      },
       backgroundColor: {
         'main-bg': '#F0F0F0',
         'main-blue': '#194979',
