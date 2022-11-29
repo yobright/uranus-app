@@ -1,16 +1,13 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import {
-  MdOutlineCancel,
   MdOutlineDashboard,
-  MdOutlineSettings,
-  MdOutlineSupervisedUserCircle,
   MdMoney,
-  MdOutlineBuildCircle,
-  MdOutlineReport,
+  MdOutlineReport
 } from "react-icons/md";
 import { GiDamagedHouse } from "react-icons/gi";
-import { FiSettings, FiGrid } from "react-icons/fi";
+import { FiGrid, FiTool } from "react-icons/fi";
+import { AiOutlineTeam, AiOutlineSetting } from "react-icons/ai";
 
 
 import IconButton from "@mui/material/IconButton";
@@ -21,31 +18,31 @@ import { useStateContext } from "../contexts/ContextProvider";
 const links = [
   {
     name: "dashboard",
-    icon: <MdOutlineDashboard className="text-2xl" />,
+    icon: <MdOutlineDashboard className="text-3xl" />,
   },
   {
     name: "production",
-    icon: <MdOutlineBuildCircle className="text-2xl" />,
+    icon: <FiTool className="text-3xl" />,
   },
   {
     name: "encaissement",
-    icon: <MdMoney className="text-2xl" />,
+    icon: <MdMoney className="text-3xl" />,
   },
   {
     name: "clientele",
-    icon: <MdOutlineSupervisedUserCircle className="text-2xl" />,
+    icon: <AiOutlineTeam className="text-3xl" />,
   },
   {
     name: "sinistre",
-    icon: <GiDamagedHouse className="text-2xl" />,
+    icon: <GiDamagedHouse className="text-3xl" />,
   },
   {
     name: "reporting",
-    icon: <MdOutlineReport className="text-2xl" />,
+    icon: <MdOutlineReport className="text-3xl" />,
   },
   {
     name: "parametre",
-    icon: <FiSettings className="text-2xl" />,
+    icon: <AiOutlineSetting className="text-3xl" />,
   },
 ];
 
@@ -54,7 +51,7 @@ const Sidebar = () => {
   
   const activeLink = "font-semibold flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-active-button text-lg m-2 bg-main-blue-button";
 
-  const normalLink = 'font-meidum flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-lg text-white dark:text-gray-200 hover:bg-main-blue-button m-2'
+  const normalLink = 'font-medium flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-lg text-white dark:text-gray-200 hover:bg-main-blue-button m-2'
 
   const handleOpen = () => {};
 
@@ -62,15 +59,15 @@ const Sidebar = () => {
     <div className="ml-3 h-screen md:overflow-hidden overflow-auto md:hver:overflow-auto pb-10">
       {activeMenu && (
         <>
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center font-semibold border">
             <Link
               to="/"
               onClick={() => setActiveMenu(false)}
-              className="items-center ml-3 mt-4 flex text-xl font-extrabold text-white"
+              className="items-center ml-3 mt-4 flex pl-4 pt-3 pb-2.5 rounded-lg text-active-button text-lg m-2 bg-main-blue-button font-semibold border"
             >
-              <p>Uranus App</p>
+              <p>Uranus App sqsq</p>
             </Link>
-            <Tooltip title="Fermer">
+            <Tooltip title="Fermer" className="border">
               <button
                 type="button"
                 onClick={() =>
@@ -79,7 +76,7 @@ const Sidebar = () => {
                 className="mt-4 mr-2"
               >
                 <IconButton>
-                  <FiGrid className="text-white text-2xl"/>
+                  <FiGrid className="text-white text-2xl" />
                 </IconButton>
               </button>
             </Tooltip>
