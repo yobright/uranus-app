@@ -51,7 +51,6 @@ export const LoginLayout = () => {
   return (
     <div>
         <div>
-            <h1>Login Layout</h1>
         </div>
       <Outlet />
     </div>

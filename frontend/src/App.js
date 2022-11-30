@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Dashboard, Clientele, Encaissement, Parametre, Production, Reporting, Sinistre } from './pages';
 
 import {UserLayout, LoginLayout} from './components/common/Layout'
-import Login from './components/Login/Login';
+import Login from './components/Auth/Login';
 
 const App = () => {
   
