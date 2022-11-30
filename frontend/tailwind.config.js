@@ -39,7 +39,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      sans: ["Work Sans", ...defaultTheme.fontFamily.sans],
+      sans: ["Work Sns", ...defaultTheme.fontFamily.sans],
     }
   },
   plugins: [],

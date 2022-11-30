@@ -10,10 +10,10 @@ import { FiGrid, FiTool } from "react-icons/fi";
 import { AiOutlineTeam, AiOutlineSetting } from "react-icons/ai";
 
 
-import IconButton from "@mui/material/IconButton";
-import Tooltip from "@mui/material/Tooltip";
+import { Tooltip } from "@chakra-ui/react";
 
-import { useStateContext } from "../contexts/ContextProvider";
+
+import { useStateContext } from "../../contexts/ContextProvider";
 
 const links = [
   {
@@ -67,7 +67,7 @@ const Sidebar = () => {
             >
               <p>Uranus App sqsq</p>
             </Link>
-            <Tooltip title="Fermer" className="border">
+            <Tooltip label="Fermer">
               <button
                 type="button"
                 onClick={() =>
@@ -75,9 +75,7 @@ const Sidebar = () => {
                 }
                 className="mt-4 mr-2"
               >
-                <IconButton>
                   <FiGrid className="text-white text-2xl" />
-                </IconButton>
               </button>
             </Tooltip>
           </div>
@@ -104,4 +102,7 @@ const Sidebar = () => {
   );
 };
 
+
 export default Sidebar;
+
+
