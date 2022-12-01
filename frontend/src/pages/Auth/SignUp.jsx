@@ -17,7 +17,7 @@ const SignUp = () => {
           .required("Nom d'utilisateur requis !"), 
         surname: Yup.string()
           .required("Prénom d'utilisateur requis !"),
-        email: Yup.string()
+        email: Yup.string().email('Entrez un email valide')
           .required("Email de l'utilisateur requis !"), 
         groupe: Yup.string()
           .required("Le groupe est requis :")
@@ -42,7 +42,7 @@ const SignUp = () => {
       <FormControl
         isInvalid={formik.errors.username && formik.touched.username}
       >
-        <FormLabel fontSize="lg">Nom d'utilisateur</FormLabel>
+        <FormLabel>Nom d'utilisateur</FormLabel>
         <Input
           name="username"
           placeholder="Entrez le nom d'utilisateur"
@@ -55,7 +55,7 @@ const SignUp = () => {
       </FormControl>
 
       <FormControl isInvalid={formik.errors.name && formik.touched.name}>
-        <FormLabel fontSize="lg">Nom de l'utilisateur</FormLabel>
+        <FormLabel>Nom de l'utilisateur</FormLabel>
         <Input
           name="name"
           placeholder="Nom de l'utilisateur"
@@ -68,7 +68,7 @@ const SignUp = () => {
       </FormControl>
 
       <FormControl isInvalid={formik.errors.surname && formik.touched.surname}>
-        <FormLabel fontSize="lg">Prénom de l'utilisateur</FormLabel>
+        <FormLabel>Prénom de l'utilisateur</FormLabel>
         <Input
           name="surname"
           placeholder="Entrez le prénom de l'utilisateur"
@@ -81,7 +81,7 @@ const SignUp = () => {
       </FormControl>
 
       <FormControl isInvalid={formik.errors.email && formik.touched.email}>
-        <FormLabel fontSize="lg">Email de l'utilisateur</FormLabel>
+        <FormLabel>Email de l'utilisateur</FormLabel>
         <Input
           name="email"
           placeholder="Entrez l'e-mail de l'utilisateur"
@@ -97,7 +97,7 @@ const SignUp = () => {
       <FormControl
         isInvalid={formik.errors.password && formik.touched.password}
       >
-        <FormLabel fontSize="lg">Mot de passe de l'utilisateur</FormLabel>
+        <FormLabel>Mot de passe de l'utilisateur</FormLabel>
         <Input
           name="password"
           placeholder="Entrez le mot de passe de l'utilisateur"
@@ -113,7 +113,11 @@ const SignUp = () => {
       <FormControl isInvalid={formik.errors.groupe && formik.touched.groupe}>
         <FormLabel>Groupe de l'utilisateur</FormLabel>
 
-        <Select placeholder="Sélectionnez une valeur" value={formik.values.groupe} name="groupe">
+        <Select
+          value={formik.values.groupe}
+          onChange={formik.handleChange}
+          name="groupe"
+        >
           <option value="option1">Option 1</option>
           <option value="option2">Option 2</option>
           <option value="option3">Option 3</option>
@@ -133,23 +137,24 @@ const SignUp = () => {
 
 export default SignUp;
 
+
+// name
+// surname
 // username (unique) 
+// email (unique) (unicité db?)
+// password (min=8, max=16, needs=(aB1@)¹)
+
+
 // nom de connexion **** (==! username) (input validation => unicité (db?))
 // ? possibilité de faire les vérifications en step ? 
 
-// password (min=8, max=16, needs=(aB1@)¹)
-// name
-// surname
 
-// email (unique) (unicité db?)
+
+
 // groupe (?env)
 
 // onSubmit
 //    - send mail to user email (data = user password)
-
-
-
-
 
 
 // <TextField
