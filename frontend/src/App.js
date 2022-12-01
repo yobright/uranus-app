@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Dashboard, Clientele, Encaissement, Parametre, Production, Reporting, Sinistre, Login, Signup } from './pages';
+import { Dashboard, Clientele, Encaissement, Parametre, Production, Reporting, Sinistre, Login, SignUp } from './pages';
 import {UserLayout, LoginLayout} from './components/common/Layout'
 
 const App = () => {
@@ -24,7 +24,7 @@ const App = () => {
           
           <Route element={<LoginLayout />}>
             <Route path="/connexion" element={<Login />} />
-            <Route path="/enregistrement-utilisateur" element={<Signup />} />
+            <Route path="/enregistrement-utilisateur" element={<SignUp />} />
           </Route>
         </Routes>
       </BrowserRouter>

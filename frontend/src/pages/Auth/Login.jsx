@@ -27,7 +27,7 @@ const Login = () => {
     >
       <VStack
         as={Form}
-        w={{ base: "90%", md: "500px" }}
+        w={{ base: "90%", md: "600px" }}
         m="auto"
         justify="center"
         h="90vh"
@@ -43,7 +43,7 @@ const Login = () => {
 
         <TextField
           name="password"
-          placeholder="Entrez votre e-mail/nom d'utilisateur"
+          placeholder="Entrez votre mot de passe"
           autoComplete="off"
           label="Mot de passe"
           type="password"
