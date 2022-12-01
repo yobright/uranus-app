@@ -1,10 +1,6 @@
-import { VStack, ButtonGroup, Button, Heading, FormControl, FormLabel, Input } from "@chakra-ui/react";
-import { Form, Formik, useFormik } from "formik";
+import { VStack, ButtonGroup, Button, Heading, FormControl, FormLabel, Input, Select, FormErrorMessage } from "@chakra-ui/react";
+import { useFormik } from "formik";
 import * as Yup from "yup";
-
-
-
-import TextField from "./TextField";
 
 const SignUp = () => {
 
@@ -12,7 +8,7 @@ const SignUp = () => {
     initialValues: { username: "", password: "", name: "", surname: "", email: "", groupe: ""},
       validationSchema:Yup.object({
         username: Yup.string()
-          .required("Email ou nom d'utilisateur requis !")
+          .required("Le nom d'utilisateur est requis !")
           .min(6, "Nom d'utilisateur trop court"),
         password: Yup.string()
           .required("Mot de passe requis !")
@@ -33,49 +29,113 @@ const SignUp = () => {
   })
 
   return (
-    <Formik>
-      <VStack
-        as="form"
-        w={{ base: "90%", md: "600px" }}
-        m="auto"
-        justify="center"
-        h="90vh"
-        spacing="1rem"
+    <VStack
+      as="form"
+      w={{ base: "90%", md: "600px" }}
+      m="auto"
+      justify="center"
+      h="90vh"
+      spacing="1rem"
+    >
+      <Heading>Création de compte utilisateur</Heading>
+
+      <FormControl
+        isInvalid={formik.errors.username && formik.touched.username}
       >
-        <Heading>Création de compte utilisateur</Heading>
+        <FormLabel fontSize="lg">Nom d'utilisateur</FormLabel>
+        <Input
+          name="username"
+          placeholder="Entrez le nom d'utilisateur"
+          autoComplete="off"
+          value={formik.values.username}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+        />
+        <FormErrorMessage>{formik.errors.username}</FormErrorMessage>
+      </FormControl>
 
-        <FormControl>
-          <FormLabel fontSize="lg">Nom d'utilisateur</FormLabel>
-          <Input 
-            name="username"
-            placeholder="Nom d'utilisateur"
-            autoComplete=""
-          />
-        </FormControl>
+      <FormControl isInvalid={formik.errors.name && formik.touched.name}>
+        <FormLabel fontSize="lg">Nom de l'utilisateur</FormLabel>
+        <Input
+          name="name"
+          placeholder="Nom de l'utilisateur"
+          autoComplete="off"
+          value={formik.values.name}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+        />
+        <FormErrorMessage>{formik.errors.name}</FormErrorMessage>
+      </FormControl>
 
-        <FormControl>
-          <FormLabel fontSize="lg">Nom de l'utilisateur</FormLabel>
-        </FormControl>
+      <FormControl isInvalid={formik.errors.surname && formik.touched.surname}>
+        <FormLabel fontSize="lg">Prénom de l'utilisateur</FormLabel>
+        <Input
+          name="surname"
+          placeholder="Entrez le prénom de l'utilisateur"
+          autoComplete="off"
+          value={formik.values.surname}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+        />
+        <FormErrorMessage>{formik.errors.surname}</FormErrorMessage>
+      </FormControl>
 
-        <FormControl>
-          <FormLabel fontSize="lg">Prénom de l'utilisateur</FormLabel>
-        </FormControl>
+      <FormControl isInvalid={formik.errors.email && formik.touched.email}>
+        <FormLabel fontSize="lg">Email de l'utilisateur</FormLabel>
+        <Input
+          name="email"
+          placeholder="Entrez l'e-mail de l'utilisateur"
+          autoComplete="off"
+          value={formik.values.email}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          type="email"
+        />
+        <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
+      </FormControl>
 
-        <ButtonGroup pt="1rem">
-          <Button colorScheme="blue" type="submit">
-            Valider
-          </Button>
-        </ButtonGroup>
-      </VStack>
-    </Formik>
+      <FormControl
+        isInvalid={formik.errors.password && formik.touched.password}
+      >
+        <FormLabel fontSize="lg">Mot de passe de l'utilisateur</FormLabel>
+        <Input
+          name="password"
+          placeholder="Entrez le mot de passe de l'utilisateur"
+          autoComplete="off"
+          value={formik.values.password}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          type="password"
+        />
+        <FormErrorMessage>{formik.errors.password}</FormErrorMessage>
+      </FormControl>
+
+      <FormControl isInvalid={formik.errors.groupe && formik.touched.groupe}>
+        <FormLabel>Groupe de l'utilisateur</FormLabel>
+
+        <Select placeholder="Sélectionnez une valeur" value={formik.values.groupe} name="groupe">
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option>
+        </Select>
+
+        <FormErrorMessage>{formik.errors.groupe}</FormErrorMessage>
+      </FormControl>
+
+      <ButtonGroup pt="1rem">
+        <Button colorScheme="blue" type="submit">
+          Valider
+        </Button>
+      </ButtonGroup>
+    </VStack>
   );
 };
 
 export default SignUp;
 
-// username (unique)
+// username (unique) 
 // nom de connexion **** (==! username) (input validation => unicité (db?))
-
+// ? possibilité de faire les vérifications en step ? 
 
 // password (min=8, max=16, needs=(aB1@)¹)
 // name

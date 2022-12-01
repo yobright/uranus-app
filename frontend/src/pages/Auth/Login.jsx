@@ -3,6 +3,7 @@ import {
   ButtonGroup,
   Button,
   Heading,
+  Select,
 } from "@chakra-ui/react";
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
@@ -18,7 +19,7 @@ const Login = () => {
           .min(6, "Nom d'utilisateur trop court"),
         password: Yup.string()
           .required("Mot de passe requis !")
-          .min(8, "Mot de passe trop court"),
+          .min(8, "Mot de passe trop court")
       })}
       onSubmit={(values, actions) => {
         alert(JSON.stringify(values, null, 2));
@@ -48,7 +49,7 @@ const Login = () => {
           label="Mot de passe"
           type="password"
         />
-
+        
         <ButtonGroup pt="1rem">
           <Button colorScheme="blue" type="submit">
             Connexion
