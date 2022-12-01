@@ -1,9 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Dashboard, Clientele, Encaissement, Parametre, Production, Reporting, Sinistre } from './pages';
-
+import { Dashboard, Clientele, Encaissement, Parametre, Production, Reporting, Sinistre, Login, Signup } from './pages';
 import {UserLayout, LoginLayout} from './components/common/Layout'
-import Login from './components/Auth/Login';
 
 const App = () => {
   
@@ -26,6 +24,7 @@ const App = () => {
           
           <Route element={<LoginLayout />}>
             <Route path="/connexion" element={<Login />} />
+            <Route path="/enregistrement-utilisateur" element={<Signup />} />
           </Route>
         </Routes>
       </BrowserRouter>

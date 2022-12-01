@@ -5,3 +5,7 @@ export { default as Parametre } from "./Parametre";
 export { default as Production } from "./Production";
 export { default as Reporting } from "./Reporting";
 export { default as Sinistre } from "./Sinistre";
+
+// page d'authentification 
+export { default as Login } from "./Auth/Login";
+export { default as Signup } from "./Auth/Signup";
