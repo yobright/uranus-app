@@ -59,13 +59,13 @@ const Sidebar = () => {
     <div className="ml-3 h-screen md:overflow-hidden overflow-auto md:hver:overflow-auto pb-10">
       {activeMenu && (
         <>
-          <div className="flex justify-between items-center font-semibold border">
+          <div className="flex justify-between items-center font-semibold">
             <Link
               to="/"
               onClick={() => setActiveMenu(false)}
-              className="items-center ml-3 mt-4 flex pl-4 pt-3 pb-2.5 rounded-lg text-active-button text-lg m-2 bg-main-blue-button font-semibold border"
+              className="items-center ml-3 mt-4 flex pl-4 pt-3 pb-2.5 rounded-lg text-active-button text-lg m-2 bg-main-blue-button font-semibold"
             >
-              <p>Uranus App sqsq</p>
+              <p>Uranus App</p>
             </Link>
             <Tooltip label="Fermer">
               <button

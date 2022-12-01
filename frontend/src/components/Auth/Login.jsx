@@ -50,6 +50,7 @@ const Login = () => {
           placeholder="Entrez votre e-mail/nom d'utilisateur"
           autoComplete="off"
           label="Mot de passe"
+          type="password"
         />
 
         <ButtonGroup pt="1rem">
