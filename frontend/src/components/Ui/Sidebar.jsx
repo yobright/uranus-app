@@ -10,7 +10,7 @@ import { FiGrid, FiTool, FiChevronsLeft } from "react-icons/fi";
 import { AiOutlineTeam, AiOutlineSetting } from "react-icons/ai";
 
 
-import { Tooltip } from "@chakra-ui/react";
+import { Tooltip, Avatar } from "@chakra-ui/react";
 
 
 import { useStateContext } from "../../contexts/ContextProvider";
@@ -49,7 +49,7 @@ const links = [
 const Sidebar = () => {
   const { activeMenu, setActiveMenu } = useStateContext();
   
-  const activeLink = "display='flex' font-semibold flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-active-button text-base m-2 bg-main-blue-button";
+  const activeLink = "font-semibold flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-active-button text-base m-2 bg-main-blue-button";
 
   const normalLink = 'font-normal flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-base text-white dark:text-gray-200 hover:bg-main-blue-button m-2'
 
@@ -59,28 +59,24 @@ const Sidebar = () => {
     <div className="ml-3 h-screen md:overflow-hidden overflow-auto md:hver:overflow-auto pb-10">
       {activeMenu && (
         <>
-          <div className="flex justify-between items-center font-semibold">
-            <Link
-              to="/"
-              onClick={() => setActiveMenu(false)}
-              className="items-center ml-3 mt-4 flex pl-4 pt-3 pb-2.5 rounded-lg text-active-button text-base m-2 bg-main-blue-button font-semibold"
-            >
-              <p>Uranus App</p>
-            </Link>
-            <Tooltip label="Fermer">
-              <button
-                type="button"
-                onClick={() =>
-                  setActiveMenu((prevActiveMenu) => !prevActiveMenu)
-                }
-                className="mt-4 mr-2"
-              >
-                <FiChevronsLeft className="text-white text-2xl" />
-              </button>
-            </Tooltip>
-          </div>
-
           <div className="mt-10">
+            <div className="">
+              <NavLink className="font-semibold flex items-center gap-5 pl-4 pt-4 pb-4 rounded-lg text-active-button text-base m-2 mb-8 bg-main-blue-button">
+                <Avatar size="sm" />
+                <span className="capitalize">Admin</span>
+                <Tooltip label="Fermer">
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setActiveMenu((prevActiveMenu) => !prevActiveMenu)
+                    }
+                    className="ml-20"
+                  >
+                    <FiChevronsLeft className="text-white text-2xl" />
+                  </button>
+                </Tooltip>
+              </NavLink>
+            </div>
             {links.map((item) => (
               <div key={item.title}>
                 <NavLink
@@ -102,6 +98,8 @@ const Sidebar = () => {
 
       {!activeMenu && (
         <>
+          
+
           <div className="mt-10">
             {links.map((item) => (
               <div key={item.title}>
