@@ -18,40 +18,40 @@ import { useStateContext } from "../../contexts/ContextProvider";
 const links = [
   {
     name: "dashboard",
-    icon: <MdOutlineDashboard className="text-3xl" />,
+    icon: <MdOutlineDashboard className="text-2xl" />,
   },
   {
     name: "production",
-    icon: <FiTool className="text-3xl" />,
+    icon: <FiTool className="text-2xl" />,
   },
   {
     name: "encaissement",
-    icon: <MdMoney className="text-3xl" />,
+    icon: <MdMoney className="text-2xl" />,
   },
   {
     name: "clientele",
-    icon: <AiOutlineTeam className="text-3xl" />,
+    icon: <AiOutlineTeam className="text-2xl" />,
   },
   {
     name: "sinistre",
-    icon: <GiDamagedHouse className="text-3xl" />,
+    icon: <GiDamagedHouse className="text-2xl" />,
   },
   {
     name: "reporting",
-    icon: <MdOutlineReport className="text-3xl" />,
+    icon: <MdOutlineReport className="text-2xl" />,
   },
   {
     name: "parametre",
-    icon: <AiOutlineSetting className="text-3xl" />,
+    icon: <AiOutlineSetting className="text-2xl" />,
   },
 ];
 
 const Sidebar = () => {
   const { activeMenu, setActiveMenu } = useStateContext();
   
-  const activeLink = "font-semibold flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-active-button text-lg m-2 bg-main-blue-button";
+  const activeLink = "display='flex' font-semibold flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-active-button text-base m-2 bg-main-blue-button";
 
-  const normalLink = 'font-medium flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-lg text-white dark:text-gray-200 hover:bg-main-blue-button m-2'
+  const normalLink = 'font-normal flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-base text-white dark:text-gray-200 hover:bg-main-blue-button m-2'
 
   const handleOpen = () => {};
 
@@ -63,7 +63,7 @@ const Sidebar = () => {
             <Link
               to="/"
               onClick={() => setActiveMenu(false)}
-              className="items-center ml-3 mt-4 flex pl-4 pt-3 pb-2.5 rounded-lg text-active-button text-lg m-2 bg-main-blue-button font-semibold"
+              className="items-center ml-3 mt-4 flex pl-4 pt-3 pb-2.5 rounded-lg text-active-button text-base m-2 bg-main-blue-button font-semibold"
             >
               <p>Uranus App</p>
             </Link>
@@ -75,7 +75,7 @@ const Sidebar = () => {
                 }
                 className="mt-4 mr-2"
               >
-                  <FiGrid className="text-white text-2xl" />
+                  <FiGrid className="text-white text-xl" />
               </button>
             </Tooltip>
           </div>
