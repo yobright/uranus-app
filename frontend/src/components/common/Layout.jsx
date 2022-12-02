@@ -26,7 +26,8 @@ export const UserLayout = () => {
             <Sidebar />
           </div>
         ) : (
-          <div className="w-0 dark:bg-secondary-dark-bg bg-blue-400 border">
+          <div className="w-24 fixed sidebar dark:bg-secondary-dark-bg bg-main-blue">
+            <Navbar />
             <Sidebar />
           </div>
         )}
@@ -35,9 +36,7 @@ export const UserLayout = () => {
             activeMenu ? "md:ml-72" : "flex-2"
           }`}
         >
-          <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">
-            <Navbar />
-          </div>
+          <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full"></div>
         </div>
         <Outlet />
       </div>

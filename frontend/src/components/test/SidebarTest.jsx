@@ -31,7 +31,6 @@ const SidebarTest = () => {
       w={navSize == "small" ? "75px" : "200px"}
       flexDir="column"
       justifyContent="space-between"
-      bg="blue.700"
     >
       <Flex
         flexDir="column"
@@ -48,6 +47,15 @@ const SidebarTest = () => {
             else changeNavSize("small");
           }}
         />
+
+        <NavItem navSize={navSize} icon={FiHome} title="Dashboard" />
+        <NavItem navSize={navSize} icon={FiHome} title="Production" />
+        <NavItem navSize={navSize} icon={FiHome} title="Encaissement" />
+        <NavItem navSize={navSize} icon={FiHome} title="Clientele" />
+        <NavItem navSize={navSize} icon={FiHome} title="Sinistre" />
+        <NavItem navSize={navSize} icon={FiHome} title="Reporting" />
+        <NavItem navSize={navSize} icon={FiHome} title="Reporting" />
+        <NavItem navSize={navSize} icon={FiHome} title="Parametre" />
       </Flex>
 
       <Flex

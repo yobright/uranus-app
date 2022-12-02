@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import { MdOutlineMenu, MdKeyboardArrowDown } from "react-icons/md";
 import { BsChatLeft } from "react-icons/bs";
 import { RiNotification3Line } from 'react-icons/ri'
-import { FiGrid } from "react-icons/fi";
+import { FiChevronsRight } from "react-icons/fi";
 
 
 import { Tooltip, Avatar } from "@chakra-ui/react";
@@ -15,10 +15,9 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
       type="button"
       onClick={customFunc}
       style={{ color }}
-      className="relative text-xl rounded-full p-3 hover:bg-light-gray right-2 top-3"
+      className="relative text-2xl rounded-full p-3 hover:bg-main-blue-button right-2 top-3"
     >
       {icon}
-     
     </button>
   </Tooltip>
 );
@@ -33,8 +32,8 @@ const Navbar = () => {
       <NavButton
         title="Menu"
         customFunc={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)}
-        color="blue"
-        icon={<FiGrid className="" />}
+        color="white"
+        icon={<FiChevronsRight className="" />}
       />
     </div>
   );

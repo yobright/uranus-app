@@ -6,7 +6,7 @@ import {
   MdOutlineReport
 } from "react-icons/md";
 import { GiDamagedHouse } from "react-icons/gi";
-import { FiGrid, FiTool, FiX } from "react-icons/fi";
+import { FiGrid, FiTool, FiChevronsLeft } from "react-icons/fi";
 import { AiOutlineTeam, AiOutlineSetting } from "react-icons/ai";
 
 
@@ -75,10 +75,11 @@ const Sidebar = () => {
                 }
                 className="mt-4 mr-2"
               >
-                  <FiX className="text-white text-2xl" />
+                <FiChevronsLeft className="text-white text-2xl" />
               </button>
             </Tooltip>
           </div>
+
           <div className="mt-10">
             {links.map((item) => (
               <div key={item.title}>
@@ -92,6 +93,27 @@ const Sidebar = () => {
                 >
                   {item.icon}
                   <span className="capitalize">{item.name}</span>
+                </NavLink>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
+
+      {!activeMenu && (
+        <>
+          <div className="mt-10">
+            {links.map((item) => (
+              <div key={item.title}>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? activeLink : normalLink
+                  }
+                  to={`/${item.name}`}
+                  key={item.name}
+                  onClick={() => {}}
+                >
+                  {item.icon}
                 </NavLink>
               </div>
             ))}
