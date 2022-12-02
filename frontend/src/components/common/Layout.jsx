@@ -45,13 +45,10 @@ export const UserLayout = () => {
   );
 };
 
-
-
 export const LoginLayout = () => {
   return (
     <div>
-        <div>
-        </div>
+       
       <Outlet />
     </div>
   );
