@@ -6,7 +6,7 @@ import {
   MdOutlineReport
 } from "react-icons/md";
 import { GiDamagedHouse } from "react-icons/gi";
-import { FiGrid, FiTool } from "react-icons/fi";
+import { FiGrid, FiTool, FiX } from "react-icons/fi";
 import { AiOutlineTeam, AiOutlineSetting } from "react-icons/ai";
 
 
@@ -75,7 +75,7 @@ const Sidebar = () => {
                 }
                 className="mt-4 mr-2"
               >
-                  <FiGrid className="text-white text-xl" />
+                  <FiX className="text-white text-2xl" />
               </button>
             </Tooltip>
           </div>
