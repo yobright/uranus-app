@@ -10,7 +10,7 @@ import { FiGrid, FiTool, FiChevronsLeft } from "react-icons/fi";
 import { AiOutlineTeam, AiOutlineSetting } from "react-icons/ai";
 
 
-import { Tooltip, Avatar } from "@chakra-ui/react";
+import { Tooltip, Avatar, MenuButton, Menu, MenuList, MenuItem, Button } from "@chakra-ui/react";
 
 
 import { useStateContext } from "../../contexts/ContextProvider";
@@ -63,7 +63,14 @@ const Sidebar = () => {
             <div className="">
               <NavLink className="font-semibold flex items-center gap-5 pl-4 pt-4 pb-4 rounded-lg text-active-button text-base m-2 mb-8 bg-main-blue-button">
                 <Avatar size="sm" />
-                <span className="capitalize">Admin</span>
+                <Menu isLazy>
+                  <MenuButton>Admin</MenuButton>
+                  <MenuList bg="blue.400">
+                    {/* MenuItems are not rendered unless Menu is open */}
+                    <MenuItem bg="blue.600">New Window</MenuItem>
+                    <MenuItem bg="blue.600">Open Closed Tab</MenuItem>
+                  </MenuList>
+                </Menu>
                 <Tooltip label="Fermer">
                   <button
                     type="button"
@@ -98,7 +105,12 @@ const Sidebar = () => {
 
       {!activeMenu && (
         <>
-          
+          <NavLink
+            className="font-semibold flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-active-button text-base m-2 bg-main-blue-button"
+            onClick={() => {}}
+          >
+            <Avatar size="sm" />
+          </NavLink>
 
           <div className="mt-10">
             {links.map((item) => (
